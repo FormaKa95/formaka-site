@@ -1,1 +1,221 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contactez-nous | FORMAKA</title>
+<meta name="description" content="Contactez FORMAKA, organisme de formation professionnelle à Sarcelles, pour toute question sur nos formations CPF et OPCO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{
+  background:linear-gradient(180deg,#132a3a 0%,#0e2130 100%);color:#fff;
+  padding:80px 0 60px;text-align:center;
+}
+.page-hero h1{font-size:clamp(32px,5vw,50px);margin:0 0 14px}
+.page-hero p{color:#c9d4d9;max-width:560px;margin:0 auto}
+
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+.contact-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:36px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}}
+.field{position:relative;margin-bottom:20px}
+.field input, .field textarea{
+  width:100%;border:1px solid #ddd;background:#fff;padding:16px 14px 8px;
+  border-radius:12px;font-size:15px;font-family:inherit;outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus, .field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(232,89,12,.14)}
+.field label{
+  position:absolute;left:12px;top:14px;padding:0 6px;background:#fff;color:var(--muted);
+  font-size:14.5px;pointer-events:none;transition:all .18s;border-radius:6px;
+}
+.field input:focus + label, .field input:not(:placeholder-shown) + label,
+.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label{
+  top:-9px;font-size:12px;color:var(--orange-deep);box-shadow:0 0 0 6px #fff;
+}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 22px;color:var(--muted);font-size:13.5px}
+.consent input{margin-top:3px}
+.toast{display:none;margin-top:16px;padding:12px 16px;border-radius:10px;font-size:14px}
+.toast-ok{background:#e9f9ef;color:#0a6c33;border:1px solid #bde8c8}
+.toast-ko{background:#fff1f0;color:#a8071a;border:1px solid #ffccc7}
+
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:0;overflow:hidden;margin-bottom:24px}
+.side-card iframe{width:100%;height:280px;border:0;display:block}
+.side-list{padding:22px 26px}
+.side-list .item{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;font-size:14.5px;color:var(--ink)}
+.side-list .item:last-child{margin-bottom:0}
+.side-list .item i{color:var(--orange);margin-top:3px;width:16px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/logo-formaka-high.jpg" alt="FORMAKA">
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Nos Formations</a></li>
+        <li><a href="contact.html" class="active">Contactez-nous</a></li>
+        <li><a href="rdv.html">Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ffb37a">Une question ?</span>
+    <h1>Contactez-nous</h1>
+    <p>Une question sur une formation, un financement ou un accompagnement ? Écrivez-nous, nous vous répondons rapidement.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-grid">
+    <div class="contact-card">
+      <form id="fk-form" action="https://formspree.io/f/xblknovl" method="POST" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <input type="text" id="prenom" name="prenom" placeholder=" " required autocomplete="given-name">
+            <label for="prenom">Prénom *</label>
+          </div>
+          <div class="field">
+            <input type="text" id="nom" name="nom" placeholder=" " required autocomplete="family-name">
+            <label for="nom">Nom *</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <input type="email" id="email" name="_replyto" placeholder=" " required autocomplete="email">
+            <label for="email">Email *</label>
+          </div>
+          <div class="field">
+            <input type="tel" id="tel" name="telephone" placeholder=" " autocomplete="tel">
+            <label for="tel">Téléphone</label>
+          </div>
+        </div>
+        <div class="field">
+          <textarea id="message" name="message" placeholder=" " required></textarea>
+          <label for="message">Message *</label>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          <span>J'accepte que mes données soient utilisées pour me recontacter à propos de ma demande.</span>
+        </label>
+        <input type="text" name="_gotcha" style="position:absolute;left:-5000px;opacity:0" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Nouveau message – Formaka (Contact)">
+        <input type="hidden" name="_format" value="plain">
+        <button type="submit" class="btn btn-primary" id="fk-submit">
+          <i class="fa-solid fa-paper-plane"></i> Envoyer
+        </button>
+        <div id="fk-ok" class="toast toast-ok">Merci ! Votre message a bien été envoyé.</div>
+        <div id="fk-ko" class="toast toast-ko">Oups… l'envoi a échoué. Vérifiez les champs ou réessayez plus tard.</div>
+        <p style="color:var(--muted);font-size:13px;margin-top:14px">* Champs obligatoires</p>
+      </form>
+    </div>
+
+    <aside>
+      <div class="side-card">
+        <iframe src="https://www.google.com/maps?q=61%20RUE%20DU%20FOUR%20DEFAIT%2C%2095200%20SARCELLES&output=embed" loading="lazy"></iframe>
+      </div>
+      <div class="side-card">
+        <div class="side-list">
+          <div class="item"><i class="fa-solid fa-location-dot"></i> 61 rue du Four Défait, 95200 Sarcelles</div>
+          <div class="item"><i class="fa-solid fa-phone"></i> <a href="tel:+33766602248" style="text-decoration:none">07 66 60 22 48</a></div>
+          <div class="item"><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@formaka.fr" style="text-decoration:none">contact@formaka.fr</a></div>
+          <div class="item"><i class="fa-solid fa-clock"></i> Lun – Ven : 9h – 18h</div>
+          <div class="item"><i class="fa-solid fa-universal-access"></i> Référent handicap : Philippe Kareman</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>FORMAKA</h4>
+        <p>Nous accompagnons chaque apprenant avec des formations de qualité, pensées pour développer ses compétences et booster son avenir professionnel.</p>
+        <img class="qualiopi-badge" src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/qualiopi-tempeos_logo-high-standard.webp" alt="Certifié Qualiopi">
+      </div>
+      <div>
+        <h4>Exploration</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos formations</a></li>
+          <li><a href="rdv.html">Prendre rendez-vous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contactez-nous</a></li>
+          <li><a href="https://drive.google.com/file/d/1nHdbqYt9mtrvdSLfj8eHRg2EVwoDalUL/view?usp=sharing">Certificat Qualiopi</a></li>
+        </ul>
+        <div class="footer-contact" style="margin-top:16px">
+          <i class="fa-solid fa-location-dot"></i> 61 rue du Four Défait, 95200 Sarcelles
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-phone"></i> <a href="tel:+33766602248">07 66 60 22 48</a>
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@formaka.fr">contact@formaka.fr</a>
+        </div>
+      </div>
+      <div>
+        <h4>Localisation</h4>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=61%20RUE%20DU%20FOUR%20DEFAIT%2C%2095200%20SARCELLES&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 FORMAKA — SIRET 94072686200011 — Déclaration d'activité n°11950931695. Cet enregistrement ne vaut pas agrément de l'État.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click', ()=>{
+  document.getElementById('mainNav').classList.toggle('open');
+});
+(() => {
+  const form = document.getElementById('fk-form');
+  const btn  = document.getElementById('fk-submit');
+  const ok   = document.getElementById('fk-ok');
+  const ko   = document.getElementById('fk-ko');
+  function show(el){ el.style.display='block' }
+  function hide(el){ el.style.display='none' }
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    hide(ok); hide(ko);
+    const consent = document.getElementById('consent').checked;
+    if(!form.prenom.value.trim() || !form.nom.value.trim() ||
+       !form._replyto.value.trim() || !form.message.value.trim() || !consent){
+      ko.textContent = "Merci de remplir les champs obligatoires et de cocher le consentement.";
+      show(ko); return;
+    }
+    btn.disabled = true;
+    try{
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+      if(res.ok){ form.reset(); show(ok); } else { show(ko); }
+    }catch(err){ show(ko); }
+    finally{ btn.disabled = false; }
+  });
+})();
+</script>
+</body>
+</html>
+
