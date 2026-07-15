@@ -1,1 +1,407 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Formations — CPF &amp; OPCO | FORMAKA</title>
+<meta name="description" content="Découvrez les formations FORMAKA : formation CPF certifiante réseaux sociaux, et 4 programmes OPCO en restauration, commerce et hygiène alimentaire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{
+  background:linear-gradient(180deg,#132a3a 0%,#0e2130 100%);color:#fff;
+  padding:80px 0 60px;text-align:center;
+}
+.page-hero h1{font-size:clamp(32px,5vw,50px);margin:0 0 14px}
+.page-hero p{color:#c9d4d9;max-width:560px;margin:0 auto}
+
+.jump-nav{display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.jump-nav a{
+  background:rgba(255,255,255,.08);color:#fff;padding:10px 20px;border-radius:999px;
+  text-decoration:none;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.2);
+}
+.jump-nav a:hover{background:rgba(255,255,255,.16)}
+
+.tms-banner{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 28px;margin-top:44px;
+}
+.tms-banner p{margin:0;color:var(--muted);font-size:14.5px}
+.tms-banner strong{color:var(--ink)}
+
+/* CPF Card */
+.cpf-fiche{
+  background:linear-gradient(135deg,#0d6e73,#0a4d52);color:#fff;border-radius:20px;
+  padding:44px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;box-shadow:var(--shadow);
+}
+.cpf-fiche h2{font-size:30px;margin:0 0 12px}
+.cpf-fiche .tag{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.85;margin-bottom:10px;display:inline-block}
+.cpf-fiche p{opacity:.92;font-size:15.5px}
+.cpf-facts{background:rgba(255,255,255,.1);border-radius:14px;padding:24px;display:grid;gap:16px;align-self:start}
+.cpf-facts div{display:flex;justify-content:space-between;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px}
+.cpf-facts div:last-child{border:0;padding-bottom:0}
+.cpf-facts b{font-weight:800}
+.cpf-cta{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* OPCO programme cards */
+.opco-intro{max-width:680px}
+.opco-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.fiche-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
+}
+.fiche-head{
+  padding:26px 28px 20px;border-bottom:1px dashed var(--line);position:relative;
+}
+.fiche-head .mark{
+  position:absolute;top:22px;right:24px;width:40px;height:40px;border-radius:50%;
+  background:var(--orange-soft);color:var(--orange-deep);display:flex;align-items:center;justify-content:center;
+  font-size:17px;
+}
+.fiche-head .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--orange-deep)}
+.fiche-head h3{font-size:22px;margin:8px 0 6px;padding-right:50px}
+.fiche-head .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);margin-top:10px}
+.fiche-head .meta span{display:flex;align-items:center;gap:6px}
+.fiche-body{padding:22px 28px;flex:1;display:flex;flex-direction:column}
+.fiche-body h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+.fiche-body ul{margin:0 0 18px;padding-left:18px;font-size:14.5px;color:var(--ink)}
+.fiche-body ul li{margin-bottom:4px}
+.fiche-days{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.day-chip{background:var(--teal-soft);color:var(--teal);font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+.fiche-footer{
+  margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+.fiche-price{font-family:'Playfair Display',serif;font-size:22px;color:var(--orange-deep)}
+.fiche-price span{font-size:12px;color:var(--muted);font-family:'Roboto',sans-serif;display:block}
+
+@media(max-width:900px){
+  .cpf-fiche{grid-template-columns:1fr}
+  .opco-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/logo-formaka-high.jpg" alt="FORMAKA">
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html" class="active">Nos Formations</a></li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="rdv.html">Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ffb37a">Catalogue de formations</span>
+    <h1>Nos formations CPF &amp; OPCO</h1>
+    <p>Une formation certifiante finançable par votre CPF, et quatre programmes métiers pris en charge par votre OPCO.</p>
+    <nav class="jump-nav">
+      <a href="#cpf"><i class="fa-solid fa-hand-holding-dollar"></i> Formation CPF</a>
+      <a href="#opco"><i class="fa-solid fa-briefcase"></i> Formations OPCO</a>
+    </nav>
+  </div>
+</section>
+
+<section id="cpf">
+  <div class="wrap">
+    <span class="eyebrow">Financement CPF</span>
+    <h2 class="title">Une formation certifiante, 100% à distance</h2>
+    <div class="cpf-fiche">
+      <div>
+        <span class="tag">Formation certifiante RS7200 — Certificateur CréActifs</span>
+        <h2>Communiquer sur les réseaux sociaux pour promouvoir sa TPE</h2>
+        <p>Conçue pour les créateurs, dirigeants de TPE et collaborateurs en charge de la communication, cette formation 100% distancielle (Zoom) vous donne les clés pour construire une présence digitale efficace : stratégie, choix des plateformes, création de page, ligne éditoriale, contenus engageants et gestion de la e-réputation.</p>
+        <p>L'évaluation finale se déroule sous forme de rapport stratégique et de soutenance orale devant un jury de 2 jurés (1 représentant CréActifs + 1 professionnel externe), avec délivrance de la certification RS7200.</p>
+        <div class="cpf-cta">
+          <a href="rdv.html" class="btn btn-primary" style="background:#fff;color:var(--teal)">Prendre rendez-vous</a>
+          <a href="contact.html" class="btn" style="border:2px solid #fff;color:#fff">Poser une question</a>
+        </div>
+      </div>
+      <div class="cpf-facts">
+        <div><span>Durée</span><b>4 jours (28 heures)</b></div>
+        <div><span>Format</span><b>100% distanciel (Zoom)</b></div>
+        <div><span>Tarif</span><b>1 800,00 € TTC / participant</b></div>
+        <div><span>Certification</span><b>RS7200 (jusqu'au 25/06/2028)</b></div>
+        <div><span>Financement</span><b>CPF · OPCO · France Travail · Autofinancement</b></div>
+        <div><span>Accessibilité</span><b>PSH / PMR : oui, référent dédié</b></div>
+      </div>
+    </div>
+
+    <div class="opco-grid" style="grid-template-columns:1fr 1fr;margin-top:36px">
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <span class="tag">Public &amp; prérequis</span>
+          <h3 style="font-size:19px">À qui s'adresse cette formation ?</h3>
+        </div>
+        <div class="fiche-body">
+          <h4>Public visé</h4>
+          <ul><li>Créateurs et dirigeants de TPE</li><li>Collaborateurs en charge de la communication</li></ul>
+          <h4>Prérequis</h4>
+          <ul>
+            <li>Maîtrise des outils bureautiques</li>
+            <li>Aisance rédactionnelle</li>
+            <li>Traitement de données chiffrées</li>
+            <li>Ordinateur + connexion internet haut débit, webcam et micro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <span class="tag">Évaluation &amp; certification</span>
+          <h3 style="font-size:19px">Comment se valide la certification ?</h3>
+        </div>
+        <div class="fiche-body">
+          <ul>
+            <li><b>Test de positionnement</b> en ouverture (Jour 1)</li>
+            <li><b>Évaluations continues</b> : cas pratiques et exercices blancs corrigés</li>
+            <li><b>Examen final</b> : rapport stratégique écrit + soutenance orale</li>
+            <li><b>Jury</b> : 1 représentant CréActifs (président) + 1 professionnel externe (66% externes)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fiche-card" style="margin-top:28px">
+      <div class="fiche-head">
+        <span class="tag">Programme 4 jours — 28 heures</span>
+        <h3 style="font-size:19px">Déroulé pédagogique jour par jour</h3>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-days" style="margin-bottom:20px">
+          <span class="day-chip">J1 · Stratégie &amp; plateformes</span>
+          <span class="day-chip">J2 · Page &amp; ligne éditoriale</span>
+          <span class="day-chip">J3 · Contenus &amp; e-réputation</span>
+          <span class="day-chip">J4 · Synthèse &amp; évaluation</span>
+        </div>
+        <div class="opco-grid" style="grid-template-columns:1fr 1fr;gap:20px">
+          <div>
+            <h4>Jour 1 (7h)</h4>
+            <ul><li>Définir une stratégie sur les réseaux sociaux</li><li>Sélectionner la ou les plateformes cibles</li></ul>
+            <h4>Jour 2 (7h)</h4>
+            <ul><li>Créer et paramétrer une page de présentation</li><li>Élaborer une stratégie éditoriale</li></ul>
+          </div>
+          <div>
+            <h4>Jour 3 (7h)</h4>
+            <ul><li>Créer des contenus réseaux sociaux engageants</li><li>Cultiver la e-réputation et optimiser la communication publicitaire</li></ul>
+            <h4>Jour 4 (7h)</h4>
+            <ul><li>Révision et mise en situation</li><li>Évaluation finale : QCM, étude de cas, feedback oral</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="opco">
+  <div class="wrap">
+    <span class="eyebrow">Financement OPCO</span>
+    <h2 class="title">4 programmes métiers, pris en charge par votre OPCO</h2>
+    <p class="lead opco-intro">Chaque programme est bâti sur 2 ou 3 jours, avec un déroulé pédagogique jour par jour, une évaluation finale théorique et pratique, et une attestation remise en fin de formation.</p>
+
+    <div class="opco-grid">
+
+      <!-- Service en salle -->
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <div class="mark"><i class="fa-solid fa-utensils"></i></div>
+          <span class="tag">Restauration &amp; relation client</span>
+          <h3>Service en salle et relation client</h3>
+          <div class="meta">
+            <span><i class="fa-solid fa-clock"></i> 3 jours (21h)</span>
+            <span><i class="fa-solid fa-users"></i> Serveurs, chefs, pâtissiers</span>
+          </div>
+        </div>
+        <div class="fiche-body">
+          <div class="fiche-days">
+            <span class="day-chip">J1 · Fondamentaux du service</span>
+            <span class="day-chip">J2 · Gestion de la relation client</span>
+            <span class="day-chip">J3 · Mise en pratique</span>
+          </div>
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Améliorer la qualité du service en salle</li>
+            <li>Gérer les réclamations et les situations difficiles</li>
+            <li>Créer une expérience client mémorable</li>
+          </ul>
+          <div class="fiche-footer">
+            <div class="fiche-price">525 €<span>par participant</span></div>
+            <a href="#" class="btn btn-outline" style="padding:10px 18px;font-size:13.5px"><i class="fa-solid fa-file-pdf"></i> Programme PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ventes additionnelles -->
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <div class="mark"><i class="fa-solid fa-cash-register"></i></div>
+          <span class="tag">Commerce de proximité</span>
+          <h3>Vente de produits additionnels en bureau de tabac</h3>
+          <div class="meta">
+            <span><i class="fa-solid fa-clock"></i> 3 jours (21h)</span>
+            <span><i class="fa-solid fa-users"></i> Buralistes, vendeurs de comptoir</span>
+          </div>
+        </div>
+        <div class="fiche-body">
+          <div class="fiche-days">
+            <span class="day-chip">J1 · Flux &amp; présentoirs</span>
+            <span class="day-chip">J2 · Merchandising &amp; upselling</span>
+            <span class="day-chip">J3 · Sourcing &amp; plan d'action</span>
+          </div>
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Augmenter le panier moyen via les produits additionnels</li>
+            <li>Optimiser la présentation des produits en comptoir</li>
+            <li>Maîtriser les techniques d'upselling sans insister</li>
+          </ul>
+          <div class="fiche-footer">
+            <div class="fiche-price">525 €<span>par participant</span></div>
+            <a href="#" class="btn btn-outline" style="padding:10px 18px;font-size:13.5px"><i class="fa-solid fa-file-pdf"></i> Programme PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dressage -->
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <div class="mark"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <span class="tag">Restauration &amp; brasserie</span>
+          <h3>Dressage &amp; coordination brasserie</h3>
+          <div class="meta">
+            <span><i class="fa-solid fa-clock"></i> 3 jours (21h)</span>
+            <span><i class="fa-solid fa-users"></i> Serveurs, chefs, personnel de salle</span>
+          </div>
+        </div>
+        <div class="fiche-body">
+          <div class="fiche-days">
+            <span class="day-chip">J1 · Fondamentaux du dressage</span>
+            <span class="day-chip">J2 · Techniques &amp; coordination</span>
+            <span class="day-chip">J3 · Mise en pratique</span>
+          </div>
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Maîtriser les techniques de dressage assiettes/plateaux</li>
+            <li>Coordonner efficacement salle et cuisine, même en rush</li>
+            <li>Développer des standards de présentation brasserie</li>
+          </ul>
+          <div class="fiche-footer">
+            <div class="fiche-price">525 €<span>par participant</span></div>
+            <a href="#" class="btn btn-outline" style="padding:10px 18px;font-size:13.5px"><i class="fa-solid fa-file-pdf"></i> Programme PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hygiène et sécurité alimentaire -->
+      <div class="fiche-card">
+        <div class="fiche-head">
+          <div class="mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <span class="tag">Hygiène &amp; sécurité alimentaire</span>
+          <h3>Hygiène et sécurité alimentaire</h3>
+          <div class="meta">
+            <span><i class="fa-solid fa-clock"></i> 2 jours (14h)</span>
+            <span><i class="fa-solid fa-users"></i> Production, conditionnement, encadrants</span>
+          </div>
+        </div>
+        <div class="fiche-body">
+          <div class="fiche-days">
+            <span class="day-chip">J1 · Fondamentaux &amp; BPH</span>
+            <span class="day-chip">J2 · HACCP &amp; PMS</span>
+          </div>
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Identifier les dangers microbiologiques, chimiques et physiques</li>
+            <li>Appliquer la méthode HACCP et le Plan de Maîtrise Sanitaire</li>
+            <li>Réagir efficacement en cas de non-conformité</li>
+          </ul>
+          <div class="fiche-footer">
+            <div class="fiche-price">350 €<span>par participant</span></div>
+            <a href="#" class="btn btn-outline" style="padding:10px 18px;font-size:13.5px"><i class="fa-solid fa-file-pdf"></i> Programme PDF</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tms-banner">
+      <p><i class="fa-solid fa-heart-pulse" style="color:var(--orange);margin-right:8px"></i>Vous suivez déjà une formation <strong>prévention des TMS</strong> avec FORMAKA ? Retrouvez toutes vos ressources sur votre espace dédié.</p>
+      <a href="#" class="btn btn-outline">Accéder à l'espace TMS</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-navy">
+  <div class="wrap center" style="max-width:640px">
+    <span class="eyebrow">Une question sur le financement ?</span>
+    <h2 class="title" style="color:#fff">Parlons de votre projet</h2>
+    <p class="lead center">CPF, OPCO ou autofinancement : nous vous aidons à choisir la bonne option et à monter votre dossier.</p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+      <a href="rdv.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="contact.html" class="btn btn-outline" style="border-color:#fff;color:#fff">Nous écrire</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>FORMAKA</h4>
+        <p>Nous accompagnons chaque apprenant avec des formations de qualité, pensées pour développer ses compétences et booster son avenir professionnel.</p>
+        <img class="qualiopi-badge" src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/qualiopi-tempeos_logo-high-standard.webp" alt="Certifié Qualiopi">
+      </div>
+      <div>
+        <h4>Exploration</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos formations</a></li>
+          <li><a href="rdv.html">Prendre rendez-vous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contactez-nous</a></li>
+          <li><a href="https://drive.google.com/file/d/1nHdbqYt9mtrvdSLfj8eHRg2EVwoDalUL/view?usp=sharing">Certificat Qualiopi</a></li>
+        </ul>
+        <div class="footer-contact" style="margin-top:16px">
+          <i class="fa-solid fa-location-dot"></i> 61 rue du Four Défait, 95200 Sarcelles
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-phone"></i> <a href="tel:+33766602248">07 66 60 22 48</a>
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@formaka.fr">contact@formaka.fr</a>
+        </div>
+      </div>
+      <div>
+        <h4>Localisation</h4>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=61%20RUE%20DU%20FOUR%20DEFAIT%2C%2095200%20SARCELLES&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 FORMAKA — SIRET 94072686200011 — Déclaration d'activité n°11950931695. Cet enregistrement ne vaut pas agrément de l'État.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click', ()=>{
+  document.getElementById('mainNav').classList.toggle('open');
+});
+</script>
+</body>
+</html>
+
