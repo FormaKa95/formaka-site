@@ -1,1 +1,141 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prendre rendez-vous | FORMAKA</title>
+<meta name="description" content="Réservez un créneau avec FORMAKA pour échanger sur votre projet de formation CPF ou OPCO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{
+  background:linear-gradient(180deg,#132a3a 0%,#0e2130 100%);color:#fff;
+  padding:80px 0 60px;text-align:center;
+}
+.page-hero h1{font-size:clamp(32px,5vw,50px);margin:0 0 14px}
+.page-hero p{color:#c9d4d9;max-width:560px;margin:0 auto}
+
+.rdv-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.rdv-step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.rdv-step .num{
+  width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;font-size:14px;
+}
+.rdv-step h3{font-size:16px;margin:0 0 8px;font-family:'Roboto',sans-serif;font-weight:700}
+.rdv-step p{font-size:14px;color:var(--muted);margin:0}
+
+.calendly-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:16px;
+}
+@media(max-width:760px){.rdv-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/logo-formaka-high.jpg" alt="FORMAKA">
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Nos Formations</a></li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="rdv.html" class="active">Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ffb37a">Échangeons</span>
+    <h1>Prendre rendez-vous</h1>
+    <p>Réservez un créneau de 20 minutes pour faire le point sur votre projet de formation et son financement.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rdv-steps">
+      <div class="rdv-step">
+        <div class="num">1</div>
+        <h3>Choisissez un créneau</h3>
+        <p>Sélectionnez le jour et l'heure qui vous conviennent dans le calendrier ci-dessous.</p>
+      </div>
+      <div class="rdv-step">
+        <div class="num">2</div>
+        <h3>Confirmez vos coordonnées</h3>
+        <p>Renseignez votre nom, email et un mot sur votre projet de formation.</p>
+      </div>
+      <div class="rdv-step">
+        <div class="num">3</div>
+        <h3>Échangeons ensemble</h3>
+        <p>Nous vous appelons ou vous recevons pour définir la formation et le financement adaptés.</p>
+      </div>
+    </div>
+
+    <div class="calendly-card">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/contactformaka" style="position: relative;min-width:320px;height:750px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>FORMAKA</h4>
+        <p>Nous accompagnons chaque apprenant avec des formations de qualité, pensées pour développer ses compétences et booster son avenir professionnel.</p>
+        <img class="qualiopi-badge" src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/qualiopi-tempeos_logo-high-standard.webp" alt="Certifié Qualiopi">
+      </div>
+      <div>
+        <h4>Exploration</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos formations</a></li>
+          <li><a href="rdv.html">Prendre rendez-vous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contactez-nous</a></li>
+          <li><a href="https://drive.google.com/file/d/1nHdbqYt9mtrvdSLfj8eHRg2EVwoDalUL/view?usp=sharing">Certificat Qualiopi</a></li>
+        </ul>
+        <div class="footer-contact" style="margin-top:16px">
+          <i class="fa-solid fa-location-dot"></i> 61 rue du Four Défait, 95200 Sarcelles
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-phone"></i> <a href="tel:+33766602248">07 66 60 22 48</a>
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@formaka.fr">contact@formaka.fr</a>
+        </div>
+      </div>
+      <div>
+        <h4>Localisation</h4>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=61%20RUE%20DU%20FOUR%20DEFAIT%2C%2095200%20SARCELLES&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 FORMAKA — SIRET 94072686200011 — Déclaration d'activité n°11950931695. Cet enregistrement ne vaut pas agrément de l'État.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click', ()=>{
+  document.getElementById('mainNav').classList.toggle('open');
+});
+</script>
+</body>
+</html>
+
