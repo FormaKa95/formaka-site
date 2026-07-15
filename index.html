@@ -1,1 +1,327 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FORMAKA — Organisme de formation professionnelle | Sarcelles</title>
+<meta name="description" content="FORMAKA, organisme de formation professionnelle certifié Qualiopi à Sarcelles. Formations CPF et OPCO en restauration, commerce et prévention des risques.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(180deg,#132a3a 0%,#0e2130 100%);
+  color:#fff;padding:0;
+}
+.hero-inner{
+  max-width:1180px;margin:0 auto;padding:110px 24px 90px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;
+}
+.hero h1{font-size:clamp(38px,5.5vw,60px);line-height:1.05;margin:0 0 22px}
+.hero h1 em{font-style:normal;color:#ffb37a}
+.hero p{font-size:19px;color:#c9d4d9;max-width:520px;margin:0 0 34px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:36px;margin-top:52px;flex-wrap:wrap}
+.hero-stats div b{display:block;font-family:'Playfair Display',serif;font-size:34px;color:#ffb37a}
+.hero-stats div span{font-size:13.5px;color:#9fb0b7}
+.hero-photo{
+  position:relative;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);
+  aspect-ratio:4/5;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.value-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow);
+}
+.value-card i{font-size:26px;color:var(--orange);margin-bottom:16px;display:block}
+.value-card h3{font-size:19px;margin:0 0 10px;font-family:'Roboto',sans-serif;font-weight:700}
+.value-card p{color:var(--muted);font-size:15px;margin:0}
+
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.about-grid img{border-radius:var(--radius);box-shadow:var(--shadow)}
+.about-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.about-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-size:15.5px}
+.about-list i{color:var(--teal);margin-top:4px}
+
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+.path-card{
+  border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;
+  color:#fff;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;
+}
+.path-card.cpf{background:linear-gradient(135deg,#0d6e73,#0a4d52)}
+.path-card.opco{background:linear-gradient(135deg,#e8590c,#a63e08)}
+.path-card .tag{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.85;margin-bottom:10px}
+.path-card h3{font-size:26px;margin:0 0 10px;font-family:'Playfair Display',serif}
+.path-card p{font-size:15px;opacity:.92;margin:0 0 18px;max-width:420px}
+.path-card a{color:#fff;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+
+.faq-wrap{display:grid;grid-template-columns:340px 1fr;gap:40px}
+.faq-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.faq-item{
+  display:block;width:100%;text-align:left;padding:20px 22px;border:0;border-bottom:1px solid var(--line);
+  background:#fff;color:var(--muted);font-weight:700;font-size:16px;cursor:pointer;
+}
+.faq-item:last-child{border-bottom:none}
+.faq-item.active{background:var(--orange-soft);color:var(--orange-deep)}
+.faq-panel{display:none}
+.faq-panel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.faq-panel h3{font-size:26px;margin:0 0 14px;font-family:'Playfair Display',serif}
+.faq-panel ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.faq-panel li{display:flex;gap:10px;color:var(--muted);font-size:15.5px}
+.faq-panel li i{color:var(--orange);margin-top:4px}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding-top:60px}
+  .hero-photo{order:-1;max-width:340px}
+  .values-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .path-grid{grid-template-columns:1fr}
+  .faq-wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/logo-formaka-high.jpg" alt="FORMAKA">
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="formations.html">Nos Formations</a></li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="rdv.html">Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow" style="color:#ffb37a">Organisme de formation certifié Qualiopi</span>
+      <h1>Faites de vos compétences<br><em>votre meilleur atout</em>.</h1>
+      <p>FORMAKA accompagne salariés et professionnels de Sarcelles et d'Île-de-France avec des formations concrètes, finançables par le CPF ou votre OPCO, et animées par des formateurs de terrain.</p>
+      <div class="hero-cta">
+        <a href="formations.html" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> Découvrir nos formations</a>
+        <a href="rdv.html" class="btn btn-outline" style="border-color:#fff;color:#fff">Prendre rendez-vous</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>5+</b><span>Programmes de formation</span></div>
+        <div><b>21h</b><span>Format moyen par session</span></div>
+        <div><b>Qualiopi</b><span>Certification qualité</span></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://primary.jwwb.nl/pexels/84/8453936.jpeg" alt="Formation professionnelle FORMAKA">
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <span class="eyebrow">Notre approche</span>
+    <h2 class="title">Une formation pensée pour le terrain</h2>
+    <p class="lead">Chaque programme est construit autour de cas réels, de mises en situation et d'un accompagnement individualisé — pas de théorie hors-sol.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Pédagogie active</h3>
+        <p>Jeux de rôle, études de cas et exercices pratiques reproduisant vos situations professionnelles réelles.</p>
+      </div>
+      <div class="value-card">
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <h3>Financement accompagné</h3>
+        <p>CPF, OPCO, France Travail ou autofinancement : nous vous aidons à choisir et monter le bon dossier.</p>
+      </div>
+      <div class="value-card">
+        <i class="fa-solid fa-universal-access"></i>
+        <h3>Accessible à tous</h3>
+        <p>Référent handicap dédié, aménagements possibles, délai d'accès moyen de 14 jours ouvrés.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about-grid">
+    <img src="https://primary.jwwb.nl/pexels/69/6914062.jpeg?enable-io=true&enable=upscale&crop=1920%2C1280%2Cx0%2Cy0%2Csafe&width=1000&height=1200" alt="Formateurs FORMAKA en action">
+    <div>
+      <span class="eyebrow">Qui sommes-nous</span>
+      <h2 class="title">Un centre de formation à taille humaine, basé à Sarcelles</h2>
+      <p class="lead">FORMAKA est un organisme de formation professionnelle continue, certifié Qualiopi, dirigé par Philippe Kareman. Nous accompagnons les adultes — salariés, indépendants, demandeurs d'emploi — dans le développement de compétences directement applicables sur le terrain.</p>
+      <ul class="about-list">
+        <li><i class="fa-solid fa-circle-check"></i> Formations en présentiel, sur notre site de Sarcelles ou en intra-entreprise</li>
+        <li><i class="fa-solid fa-circle-check"></i> Formateurs expérimentés issus des secteurs concernés (restauration, commerce, prévention)</li>
+        <li><i class="fa-solid fa-circle-check"></i> Suivi personnalisé, du positionnement initial jusqu'à la remise des attestations</li>
+        <li><i class="fa-solid fa-circle-check"></i> Accessibilité PSH/PMR avec référent handicap dédié</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <span class="eyebrow">Vos options de financement</span>
+    <h2 class="title">Deux façons de financer votre formation</h2>
+    <p class="lead">Selon votre statut et votre projet, une formation FORMAKA peut être prise en charge en totalité ou en partie.</p>
+    <div class="path-grid">
+      <div class="path-card cpf">
+        <div class="tag">Compte Personnel de Formation</div>
+        <h3>Formation CPF</h3>
+        <p>Une formation certifiante finançable avec vos droits CPF, sans avance de frais dans la plupart des cas.</p>
+        <a href="formations.html#cpf">Voir la formation CPF <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="path-card opco">
+        <div class="tag">Opérateur de compétences</div>
+        <h3>Formations OPCO</h3>
+        <p>4 programmes métiers pris en charge par votre OPCO : service en salle, ventes additionnelles, dressage, hygiène alimentaire.</p>
+        <a href="formations.html#opco">Voir les formations OPCO <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Questions fréquentes</span>
+    <h2 class="title" style="margin-bottom:44px">Tout ce qu'il faut savoir avant de s'inscrire</h2>
+    <div class="faq-wrap">
+      <nav class="faq-list" id="faqNav">
+        <button class="faq-item active" data-tab="q1">Ce que nous faisons</button>
+        <button class="faq-item" data-tab="q2">Programme &amp; modalités</button>
+        <button class="faq-item" data-tab="q3">Financement &amp; CPF</button>
+        <button class="faq-item" data-tab="q4">Accompagnement</button>
+        <button class="faq-item" data-tab="q5">Accessibilité &amp; délais</button>
+      </nav>
+      <section>
+        <article id="q1" class="faq-panel active">
+          <h3>Ce que nous faisons</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i>Conception de programmes sur mesure adaptés aux réalités du métier.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Sessions en présentiel, avec mises en situation et jeux de rôle.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Des thématiques variées : restauration, commerce, hygiène, prévention.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Un accompagnement de la montée en compétences de bout en bout.</li>
+          </ul>
+        </article>
+        <article id="q2" class="faq-panel">
+          <h3>Programme &amp; modalités</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i>Modules organisés en journées progressives (2 à 4 jours selon la formation).</li>
+            <li><i class="fa-solid fa-circle-check"></i>Alternance entre apports théoriques, cas pratiques et mises en situation.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Test de positionnement initial et évaluation finale théorique et pratique.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Attestation de fin de formation remise à chaque participant.</li>
+          </ul>
+        </article>
+        <article id="q3" class="faq-panel">
+          <h3>Financement &amp; CPF</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i>Éligibilité CPF pour notre formation certifiante RS7200.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Accompagnement dans les démarches auprès de votre OPCO.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Facilités de paiement en plusieurs fois pour l'autofinancement.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Conseil personnalisé sur le dispositif le plus adapté à votre situation.</li>
+          </ul>
+        </article>
+        <article id="q4" class="faq-panel">
+          <h3>Accompagnement</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i>Bilan initial pour adapter le parcours à votre niveau et vos objectifs.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Formateurs disponibles pendant et après la formation.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Supports remis à chaque participant (fiches, PDF de synthèse).</li>
+            <li><i class="fa-solid fa-circle-check"></i>Retour d'expérience et plan d'action personnalisé en fin de session.</li>
+          </ul>
+        </article>
+        <article id="q5" class="faq-panel">
+          <h3>Accessibilité &amp; délais</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i>Référent handicap disponible : Philippe Kareman, contact direct.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Aménagements possibles sur simple demande, réponse sous 24 à 48h ouvrées.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Délai d'accès moyen de 14 jours ouvrés après validation du dossier.</li>
+            <li><i class="fa-solid fa-circle-check"></i>Convocation envoyée avec toutes les informations pratiques avant le démarrage.</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="section-navy">
+  <div class="wrap center" style="max-width:640px">
+    <span class="eyebrow">Prêt à commencer ?</span>
+    <h2 class="title" style="color:#fff">Discutons de votre projet de formation</h2>
+    <p class="lead center">Un échange rapide suffit pour identifier la formation et le financement adaptés à votre situation.</p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+      <a href="rdv.html" class="btn btn-primary">Prendre rendez-vous</a>
+      <a href="contact.html" class="btn btn-outline" style="border-color:#fff;color:#fff">Nous écrire</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>FORMAKA</h4>
+        <p>Nous accompagnons chaque apprenant avec des formations de qualité, pensées pour développer ses compétences et booster son avenir professionnel.</p>
+        <img class="qualiopi-badge" src="https://primary.jwwb.nl/public/r/z/k/temp-lfxwwjaopxczzrbwvemg/qualiopi-tempeos_logo-high-standard.webp" alt="Certifié Qualiopi">
+      </div>
+      <div>
+        <h4>Exploration</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Nos formations</a></li>
+          <li><a href="rdv.html">Prendre rendez-vous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contactez-nous</a></li>
+          <li><a href="https://drive.google.com/file/d/1nHdbqYt9mtrvdSLfj8eHRg2EVwoDalUL/view?usp=sharing">Certificat Qualiopi</a></li>
+        </ul>
+        <div class="footer-contact" style="margin-top:16px">
+          <i class="fa-solid fa-location-dot"></i> 61 rue du Four Défait, 95200 Sarcelles
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-phone"></i> <a href="tel:+33766602248">07 66 60 22 48</a>
+        </div>
+        <div class="footer-contact">
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@formaka.fr">contact@formaka.fr</a>
+        </div>
+      </div>
+      <div>
+        <h4>Localisation</h4>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps?q=61%20RUE%20DU%20FOUR%20DEFAIT%2C%2095200%20SARCELLES&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 FORMAKA — SIRET 94072686200011 — Déclaration d'activité n°11950931695. Cet enregistrement ne vaut pas agrément de l'État.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click', ()=>{
+  document.getElementById('mainNav').classList.toggle('open');
+});
+const items = document.querySelectorAll('#faqNav .faq-item');
+const panels = document.querySelectorAll('.faq-panel');
+items.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const id = btn.dataset.tab;
+    items.forEach(b=>b.classList.toggle('active', b===btn));
+    panels.forEach(p=>p.classList.toggle('active', p.id===id));
+  });
+});
+</script>
+</body>
+</html>
+
